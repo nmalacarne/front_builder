@@ -3,9 +3,12 @@ module ApplicationHelper
     links = [] 
 
     if user_signed_in?
-      links << {:text => 'Adventure Fronts', :target => :root}
+      links << link_to('Adventure Fronts', :root)
+      links << link_to('Campaign Fronts', :root)
+      links << '<label class="text-center">Account</label>'.html_safe
+      links << link_to('Sign Out', :destroy_user_session, :method => :delete)
     else
-      links << {:text => 'Sign In', :target => :new_user_session}
+      links << link_to('Sign In', :new_user_session)
     end
 
     links
