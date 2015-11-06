@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Front Builder" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -13,8 +13,29 @@
   </head>
 
   <body>
-
-    <%= yield %>
-
+    <div class="off-canvas-wrap" data-offcanvas>
+      <main class="inner-wrap">
+        <nav class="tab-bar">
+          <section class="left-small">
+            <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+          </section>
+          <section class="middle tab-bar-section">
+            <h1 class="title">Front Builder</h1>
+          </section>
+        </nav>
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li>
+              <label>Menu</label>
+            </li>
+            <li>
+              <a href="#">Testing</a>
+            </li>
+          </ul> 
+        </aside>
+        <a class="exit-off-canvas"></a>
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
