@@ -6,7 +6,8 @@ module ApplicationHelper
       links << link_to('Adventure Fronts', :root)
       links << link_to('Campaign Fronts', :root)
       links << '<label class="text-center">Account</label>'.html_safe
-      links << link_to('Sign Out', :destroy_user_session, :method => :delete)
+      links << link_to('Settings', :edit_user_registration)
+      links << link_to('Sign Out', :destroy_user_session, method: :delete)
     else
       links << link_to('Sign In', :new_user_session)
     end
