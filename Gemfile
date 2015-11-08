@@ -15,6 +15,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Gems used only for development and not required
+# in production environments by default.
+group :development do
+  gem 'thin'
+end
+
 gem 'jquery-rails'
 gem 'pg'
 gem 'devise'
