@@ -4,7 +4,7 @@ A tool for Dungeon World to help manage Adventure and Campaign fronts.
 
 ## Installation
 
-Install [vagrant](via https://docs.vagrantup.com/v2/installation/)
+Install vagrant[https://docs.vagrantup.com/v2/installation/]
 
 From the project's root directory, run `$ vagrant up`
 
