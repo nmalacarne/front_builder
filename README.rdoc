@@ -30,3 +30,7 @@ create the database and run migrations:
 You can now run the project via 
 
   $ rails s
+
+You can view the project by visiting
+
+  localhost:3000
