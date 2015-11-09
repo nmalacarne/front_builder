@@ -3,7 +3,7 @@ module ApplicationHelper
     links = [] 
 
     if user_signed_in?
-      links << link_to('Adventures', :root)
+      links << link_to('Adventures', :adventures)
       links << link_to('Settings', :edit_user_registration)
       links << link_to('Sign Out', :destroy_user_session, method: :delete)
     else
