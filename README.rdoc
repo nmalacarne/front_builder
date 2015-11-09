@@ -1,22 +1,32 @@
-## Front Builder
+= Front Builder
 
 A tool for Dungeon World to help manage Adventure and Campaign fronts.
 
-## Installation
+= Installation
 
 Install vagrant[https://docs.vagrantup.com/v2/installation/]
 
-From the project's root directory, run `$ vagrant up`
+From the project's root directory, run 
 
-SSH into the virtual machine via `$ vagrant ssh`
+  $ vagrant up
 
-Change to the project directory via `$ cd /vagrant`
+SSH into the virtual machine via 
 
-Run `$ bundle install` to install gem dependencies
+  $ vagrant ssh
+
+Change to the project directory via 
+
+  $ cd /vagrant
+
+Install project dependencies via
+
+  $ bundle install
 
 Before you run the project for the first time, you will need to
 create the database and run migrations:
 
-`$ rake db:setup`
+  $ rake db:setup
 
-You can now run the project via `$ rails s`
+You can now run the project via 
+
+  $ rails s
