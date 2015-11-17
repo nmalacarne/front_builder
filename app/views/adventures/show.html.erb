@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="large-8 columns">
+  <div class="large-8 large-offset-2 columns">
     <p id="notice"><%= notice %></p>
 
     <p>
@@ -12,6 +12,7 @@
       <%= @adventure.description %>
     </p>
 
+    <%= button_to 'Delete', @adventure, method: :delete, confirm: 'Are you sure?', class: 'button alert' %>
 
     <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
     <%= link_to 'Back', adventures_path %>
