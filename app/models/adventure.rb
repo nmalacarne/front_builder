@@ -1,5 +1,6 @@
 class Adventure < ActiveRecord::Base
   attr_accessible :description, :title
   validates_presence_of :title
-  has_many :dangers
+  has_many :dangers, dependant: :destroy
+  accepts_nested_attributes_for :dangers
 end
