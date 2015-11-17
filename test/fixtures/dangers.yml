@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  adventure: 
+  title: MyString
+  impulse: MyString
+  impending_doom: MyString
+
+two:
+  adventure: 
+  title: MyString
+  impulse: MyString
+  impending_doom: MyString
