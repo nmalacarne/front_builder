@@ -22,16 +22,12 @@
   </div>
 
   <p>
-    <b>Dangers:</b>
+    <%= link_to_add_fields 'dangers/fields', 'Add Danger', f, :dangers %>
     <ul class="accordion" data-accordion>
       <%= f.fields_for :dangers do |builder| %>
         <%= render partial: 'dangers/fields', locals: {f: builder} %>
       <% end %>
     </ul>
-  </p>
-
-  <p>
-    <%= link_to_add_fields 'dangers/fields', 'Add Danger', f, :dangers %>
   </p>
 
   <div class="actions">
