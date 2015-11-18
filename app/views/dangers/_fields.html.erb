@@ -1,14 +1,21 @@
-<fieldset>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<li class="accordion-navigation">
+  <a href="#panel-<%= f.object.id %>">
+    <%= f.object.title %>
+  </a>
+  <div id="panel-<%= f.object.id %>" class="content">
+    <fieldset>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+      <div class="field">
+        <%= f.label :impulse %>
+        <%= f.text_field :impulse %>
+      </div>
+      <div class="field">
+        <%= f.label :impending_doom %>
+        <%= f.text_field :impending_doom %>
+      </div>
+    </fieldset>
   </div>
-  <div class="field">
-    <%= f.label :impulse %>
-    <%= f.text_field :impulse %>
-  </div>
-  <div class="field">
-    <%= f.label :impending_doom %>
-    <%= f.text_field :impending_doom %>
-  </div>
-</fieldset>
+</li>

@@ -21,9 +21,14 @@
     <%= f.text_area :description %>
   </div>
 
-  <%= f.fields_for :dangers do |builder| %>
-    <%= render partial: 'dangers/fields', locals: {f: builder} %>
-  <% end %>
+  <p>
+    <b>Dangers:</b>
+    <%= f.fields_for :dangers do |builder| %>
+      <ul class="accordion" data-accordion>
+        <%= render partial: 'dangers/fields', locals: {f: builder} %>
+      </ul>
+    <% end %>
+  </p>
 
   <div class="actions">
     <%= f.submit class: 'button' %>
