@@ -2,6 +2,8 @@
   <div class="large-8 large-offset-2 columns">
     <p id="notice"><%= notice %></p>
 
+    <%= button_to 'Delete', @adventure, method: :delete, confirm: 'Are you sure?', class: 'button tiny right alert' %>
+
     <p>
       <b>Title:</b>
       <%= @adventure.title %>
@@ -14,15 +16,16 @@
 
     <p>
       <b>Dangers:</b>
-      <br>
-      <ul class="accordion" data-accordion>
-        <% @adventure.dangers.each do |danger| -%>
-            <%= render partial: 'dangers/list_item', locals: {danger: danger} %>
-        <% end %>
-      </ul>
-    <p>
-
-    <%= button_to 'Delete', @adventure, method: :delete, confirm: 'Are you sure?', class: 'button small alert' %>
+      <% if @adventure.dangers.any? -%>
+        <ul class="accordion" data-accordion>
+          <% @adventure.dangers.each do |danger| -%>
+              <%= render partial: 'dangers/list_item', locals: {danger: danger} %>
+          <% end %>
+        </ul>
+      <% else %>
+        <i>No dangers found.</i>
+      <% end %>
+    </p>
 
     <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
     <%= link_to 'Back', adventures_path %>
