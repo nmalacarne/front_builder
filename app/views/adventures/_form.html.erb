@@ -1,3 +1,4 @@
+<%= debug @adventure %>
 <%= form_for(@adventure) do |f| %>
   <% if @adventure.errors.any? %>
     <div id="error_explanation">
@@ -19,6 +20,12 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+  <%= f.fields_for :dangers do |builder| %>
+    <div class="field">
+      <%= builder.label :title %>
+      <%= builder.text_field :title %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit class: 'button' %>
   </div>
