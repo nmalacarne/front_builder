@@ -16,6 +16,10 @@
         <%= f.label :impending_doom %>
         <%= f.text_field :impending_doom %>
       </div>
+      <div class="field">
+        <%= f.hidden_field :_destroy %>
+      </div>
+      <%= button_tag 'Delete', type: 'button', class: 'button alert tiny right delete-danger' %>
     </fieldset>
   </div>
 </li>
