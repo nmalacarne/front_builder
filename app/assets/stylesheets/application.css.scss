@@ -8,15 +8,23 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require foundation_and_overrides
+ *= require_self
 
  *= require_tree .
  */
+@import 'foundation';
+
 body,html {
   height:100%;
   width:100%;
 }
 .content {
   padding-top: 20px;
+}
+
+.form-panel {
+  @include panel(
+    $bg: white
+  )
 }
