@@ -1,6 +1,6 @@
 <li class="accordion-navigation">
   <a href="#panel-<%= f.object.id %>">
-    <%= f.object.title %>
+    <%= f.object.title || 'New Danger' %>
   </a>
   <div id="panel-<%= f.object.id %>" class="content">
     <fieldset>
