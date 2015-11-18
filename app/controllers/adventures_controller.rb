@@ -14,7 +14,6 @@ class AdventuresController < ApplicationController
 
   def new
     @adventure = Adventure.new
-    @adventure.dangers.build 
     respond_with(@adventure)
   end
 
