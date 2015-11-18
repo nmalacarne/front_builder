@@ -1,3 +1,8 @@
-<% @dangers.each do |danger| -%>
-  <p>danger.title</p>
-<% end %>
+<li class="accordion-navigation">
+  <a href="#panel-<%= danger.id %>">
+    <%= danger.title %>
+  </a>
+  <div id="panel-<%= danger.id %>" class="content">
+    <%= debug danger %>
+  </div>
+</li>
