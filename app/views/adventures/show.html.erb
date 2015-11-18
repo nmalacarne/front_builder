@@ -17,7 +17,7 @@
       <br>
       <ul class="accordion" data-accordion>
         <% @adventure.dangers.each do |danger| -%>
-            <%= render partial: 'dangers/list', locals: {danger: danger} %>
+            <%= render partial: 'dangers/list_item', locals: {danger: danger} %>
         <% end %>
       </ul>
     <p>
