@@ -1,36 +1,48 @@
-<%= form_for(@adventure) do |f| %>
-  <% if @adventure.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@adventure.errors.count, "error") %> prohibited this adventure from being saved:</h2>
+<% if @adventure.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@adventure.errors.count, "error") %> prohibited this adventure from being saved:
+    </h2>
 
-      <ul>
+    <ul>
       <% @adventure.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-
-  <p>
-    <%= link_to_add_fields 'dangers/fields', 'Add Danger', f, :dangers %>
-    <ul class="accordion" data-accordion>
-      <%= f.fields_for :dangers do |builder| %>
-        <%= render partial: 'dangers/fields', locals: {f: builder} %>
-      <% end %>
     </ul>
-  </p>
-
-  <div class="actions">
-    <%= f.submit class: 'button small' %>
   </div>
 <% end %>
+
+<div class="white-panel">
+  <%= form_for(@adventure) do |f| %>
+    <div class="actions left">
+      <%= f.submit 'Save', class: 'button success tiny' %>
+    </div>
+
+    <div class="text-right">
+      <%= link_to @adventure do %>
+        <%= button_tag type: 'button', class: 'button tiny alert' do %>
+          <%= content_tag :span, 'Cancel' %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </div>
+
+    <p>
+      <%= link_to_add_fields 'dangers/fields', 'Add Danger', f, :dangers %>
+      <ul class="accordion" data-accordion>
+        <%= f.fields_for :dangers do |builder| %>
+          <%= render partial: 'dangers/fields', locals: {f: builder} %>
+        <% end %>
+      </ul>
+    </p>
+  <% end %>
+</div>
