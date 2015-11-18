@@ -15,11 +15,11 @@
     <p>
       <b>Dangers:</b>
       <br>
-      <% @adventure.dangers.each do |danger| -%>
-        <ul class="accordion" data-accordion>
-          <%= render partial: 'dangers/list', locals: {danger: danger} %>
-        </ul>
-      <% end %>
+      <ul class="accordion" data-accordion>
+        <% @adventure.dangers.each do |danger| -%>
+            <%= render partial: 'dangers/list', locals: {danger: danger} %>
+        <% end %>
+      </ul>
     <p>
 
     <%= button_to 'Delete', @adventure, method: :delete, confirm: 'Are you sure?', class: 'button alert' %>
