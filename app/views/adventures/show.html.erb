@@ -2,7 +2,17 @@
   <div class="large-8 large-offset-2 columns white-panel">
     <p id="notice"><%= notice %></p>
 
-    <%= button_to 'Delete', @adventure, method: :delete, confirm: 'Are you sure?', class: 'button tiny right alert' %>
+    <div class="left">
+      <%= link_to edit_adventure_path(@adventure) do %>
+        <%= button_tag type: 'button', class: 'button tiny warning' do %> 
+          <%= content_tag :span, 'Edit' %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="text-right">
+      <%= button_to 'Delete', @adventure, method: :delete, confirm: 'Are you sure?', class: 'button tiny alert' %>
+    </div>
 
     <p>
       <b>Title:</b>
@@ -27,7 +37,5 @@
       <% end %>
     </p>
 
-    <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
-    <%= link_to 'Back', adventures_path %>
   </div>
 </div>
