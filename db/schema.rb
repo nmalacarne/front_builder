@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151117195523) do
+ActiveRecord::Schema.define(:version => 20151119233016) do
 
   create_table "adventures", :force => true do |t|
     t.string   "title",       :default => "", :null => false
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(:version => 20151117195523) do
   end
 
   add_index "dangers", ["adventure_id"], :name => "index_dangers_on_adventure_id"
+
+  create_table "grim_portents", :force => true do |t|
+    t.integer  "danger_id"
+    t.text     "description"
+    t.boolean  "complete"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "grim_portents", ["danger_id"], :name => "index_grim_portents_on_danger_id"
 
   create_table "users", :force => true do |t|
     t.datetime "created_at",                             :null => false

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  danger: 
+  description: MyText
+  complete: false
+
+two:
+  danger: 
+  description: MyText
+  complete: false
