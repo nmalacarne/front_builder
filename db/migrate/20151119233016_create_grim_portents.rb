@@ -3,7 +3,7 @@ class CreateGrimPortents < ActiveRecord::Migration
     create_table :grim_portents do |t|
       t.references :danger
       t.text :description
-      t.boolean :complete
+      t.boolean :complete, default: false
 
       t.timestamps
     end
