@@ -1,5 +1,12 @@
-<div class="field small-8 columns">
-  <%= f.text_field :description %>
+<div class="row collapse remove-fields-wrapper">
+  <div class="small-11 columns"> 
+    <div class="field">
+      <%= f.text_field :description, placeholder: 'Grim Portent' %>
+    </div>
+  </div>
+  <div class="small-1 columns">
+    <%= content_tag :a, href: '#', class: 'button alert postfix remove-fields' do %>
+      x
+    <% end %>
+  </div>
 </div>
-<%= f.hidden_field :_destroy %>
-<%= button_tag 'Delete', type: 'button', class: 'button alert tiny remove-fields' %>
