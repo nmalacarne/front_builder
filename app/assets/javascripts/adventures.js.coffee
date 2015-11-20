@@ -3,13 +3,17 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
   $('form').on 'click', '.remove-fields', (event) ->
-    console.log($(this).prev('input[type=hidden]'))
     $(this).prev('input[type=hidden]').attr('value', 'true')
-    $(this).closest('.accordion-navigation').hide()
+    $(this).parentsUntil('.remove-fields-wrapper').parent().hide()
     event.preventDefault()
 
   $('form').on 'click', '.add-fields', (event) ->
+    id = $(this).data('id')
+    fields =$(this).data('fields')
+
     time = new Date().getTime()
-    regexp = new RegExp($(this).data('id'), 'g')
-    $('.accordion').append($(this).data('fields').replace(regexp, time))
+    regex = new RegExp(id, 'g')
+    fields = fields.replace(regex, time) # replace id with time (unique 'id')
+
+    $(this).next('.add-fields-wrapper').append(fields)
     event.preventDefault()
