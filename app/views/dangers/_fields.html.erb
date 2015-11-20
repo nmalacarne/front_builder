@@ -1,9 +1,9 @@
 <li class="accordion-navigation">
-  <a href="#panel-<%= f.object.id %>">
+  <a href="#panel-<%= f.object.id || f.object.object_id %>">
     <%= f.object.title || 'New Danger' %>
     <%= button_tag 'Delete', type: 'button', class: 'button alert tiny right remove-fields' %>
   </a>
-  <div id="panel-<%= f.object.id %>" class="content">
+  <div id="panel-<%= f.object.id || f.object.object_id %>" class="content">
     <fieldset>
       <div class="field">
         <%= f.label :title %>
