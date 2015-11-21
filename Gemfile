@@ -15,6 +15,7 @@ end
 # in production environments by default.
 group :development do
   gem 'thin'
+  gem 'knife-solo'
 end
 
 gem 'jquery-rails'
