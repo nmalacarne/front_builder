@@ -35,12 +35,13 @@
       <%= f.label :description %><br />
       <%= f.text_area :description %>
     </div>
+    <hr>
 
-      <%= link_to_add_fields 'dangers/fields', 'Add Danger', f, :dangers %>
-      <ul class="accordion add-fields-wrapper" data-accordion>
-        <%= f.fields_for :dangers do |builder| %>
-          <%= render partial: 'dangers/fields', locals: {f: builder} %>
-        <% end %>
-      </ul>
+    <%= link_to_add_fields 'dangers/fields', 'Add Danger', f, :dangers %>
+    <ul class="accordion add-fields-wrapper" data-accordion>
+      <%= f.fields_for :dangers do |builder| %>
+        <%= render partial: 'dangers/fields', locals: {f: builder} %>
+      <% end %>
+    </ul>
   <% end %>
 </div>

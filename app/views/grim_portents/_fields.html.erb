@@ -1,5 +1,10 @@
 <div class="row collapse remove-fields-wrapper">
-  <div class="small-11 columns"> 
+  <div class="small-1 columns">
+    <div class="field">
+      <%= f.check_box :complete, class: 'inline' %>
+    </div>
+  </div>
+  <div class="small-10 columns"> 
     <div class="field">
       <%= f.text_field :description, placeholder: 'Grim Portent' %>
     </div>

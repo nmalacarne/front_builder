@@ -1,7 +1,7 @@
 <li class="accordion-navigation remove-fields-wrapper">
   <a href="#panel-<%= f.object.id || f.object.object_id %>">
     <%= f.object.title || 'New Danger' %>
-    <%= button_tag 'Delete', type: 'button', class: 'button alert tiny right remove-fields' %>
+    <%= button_tag 'Delete Danger', type: 'button', class: 'button alert tiny right remove-fields' %>
   </a>
   <div id="panel-<%= f.object.id || f.object.object_id %>" class="content">
     <fieldset>
@@ -19,6 +19,8 @@
       </div>
 
       <%= f.hidden_field :_destroy %>
+
+      <hr>
 
       <%= link_to_add_fields 'grim_portents/fields', 'Add Grim Portent', f, :grim_portents %>
       <div id="portent-panel" class="content add-fields-wrapper">
