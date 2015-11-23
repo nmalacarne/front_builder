@@ -12,4 +12,17 @@ module AdventuresHelper
       end
     end
   end
+
+  def print_grim_portents_count(adventure_id)
+    adventure = Adventure.find(adventure_id)
+
+    complete_list = adventure.dangers.flat_map do |danger|
+      danger.grim_portents.map do |grim_portent|
+        grim_portent.complete? 
+      end
+    end
+
+    "#{complete_list.count true}/#{complete_list.count} #{'Grim Portent'.pluralize complete_list.count} Complete" 
+    "#{pluralize complete_list.count, 'Grim Portent'} (#{complete_list.count true} Complete)"
+  end
 end

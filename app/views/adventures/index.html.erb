@@ -18,9 +18,16 @@
           </h3>
           <hr>
           <div class="text-center">
-            <b>
-              <%= pluralize adventure.dangers.count, 'danger' %>
-            </b>
+            <p>
+              <b> 
+                <%= pluralize adventure.dangers.count, 'danger' %> 
+              </b>
+            </p>
+            <p>
+              <b> 
+                <%= print_grim_portents_count adventure.id %> 
+              </b>
+            </p>
           </div>
         </div>
       </div>
