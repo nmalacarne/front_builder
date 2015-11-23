@@ -6,7 +6,7 @@
   </div>
   <div class="small-10 columns"> 
     <div class="field">
-      <%= f.text_field :description, placeholder: 'Grim Portent' %>
+      <%= f.text_field :description, placeholder: 'Grim Portent', disabled: f.object.complete? %>
     </div>
   </div>
   <div class="small-1 columns">

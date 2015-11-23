@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
   $('form').on 'click', '.remove-fields', (event) ->
-    $(this).prev('input[type=hidden]').attr('value', 'true')
+    $(this).prev('input:hidden').attr('value', 'true')
     $(this).parentsUntil('.remove-fields-wrapper').parent().hide()
     event.preventDefault()
 
@@ -17,3 +17,11 @@ jQuery ->
 
     $(this).next('.add-fields-wrapper').append(fields)
     event.preventDefault()
+
+  $('#portent-panel input:checkbox').change (event) ->
+    $target = $(this).parent().parent().next().find('input:text')
+
+    if (this.checked)
+      $target.prop('disabled', true)
+    else
+      $target.removeAttr('disabled')
