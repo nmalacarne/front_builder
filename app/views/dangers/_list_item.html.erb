@@ -3,7 +3,34 @@
     <%= danger.title %>
   </a>
   <div id="panel-<%= danger.id %>" class="content">
-    <%= debug danger %>
-    <%= debug danger.grim_portents %>
+    <fieldset>
+      <div class="row">
+        <p>
+          <b>Title:</b> <%= danger.title || 'No title.'%>
+        </p>
+        <p>
+          <b>Impulse:</b> <%= danger.impulse || 'No impulse.' %>
+        </p>
+        <p>
+          <b>Impending Doom:</b> <%= danger.impending_doom || 'No impending doom.' %>
+        </p>
+        <p>
+          <b>Grim Portents:</b>
+          <% if danger.grim_portents.any? -%>
+            <ul>
+              <% danger.grim_portents.each do |grim_portent| %>
+                <li>
+                  <%= content_tag :span, class: "#{'portent-complete' if grim_portent.complete?}" do %>
+                    <%= grim_portent.description %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <i>No Grim Portents found.</i>
+          <% end %>
+        </p>
+      </div>
+    </fieldset>
   </div>
 </li>
