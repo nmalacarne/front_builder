@@ -1,0 +1,7 @@
+name 'front-builder.com'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures front-builder.com'
+long_description 'Installs/Configures front-builder.com'
+version '0.1.0'

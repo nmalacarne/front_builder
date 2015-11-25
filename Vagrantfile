@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing 'localhost:8080' will access port 80 on the guest machine.
-  config.vm.network :forwarded_port, guest: 3000, host: 3000 
+  config.vm.network :forwarded_port, guest: 80, host: 3000 
   
   # Forward local SSH to VM
   config.ssh.forward_agent = true
@@ -26,23 +26,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vbox.cpus    = 1 
   end
 
+  # Only sync Rails project files
+  config.vm.synced_folder './rails', '/vagrant/'
+
   # Chef
   config.vm.provision :chef_solo do |chef| 
-    chef.cookbooks_path = 'chef/cookbooks'
-
-    chef.add_recipe 'apt'
-    chef.add_recipe 'build-essential'
-    chef.add_recipe 'postgresql::server'
-    chef.add_recipe 'nodejs'
-    chef.add_recipe 'ruby'
-    chef.add_recipe 'bundler'
-
-    chef.json = {
-      :postgresql => {
-        :password => {
-          :postgres => 'admin'
-        }
-      }
-    }
+    chef.cookbooks_path = 'cookbooks'
+    
+    chef.add_recipe 'front-builder.com'
   end
 end
