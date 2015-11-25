@@ -6,3 +6,4 @@
 execute 'apt-get update'
 
 package 'rails'
+package 'nodejs'

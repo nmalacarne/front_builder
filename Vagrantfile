@@ -27,12 +27,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # Only sync Rails project files
-  config.vm.synced_folder './rails', '/vagrant/'
+  config.vm.synced_folder './front-builder.com', '/front-builder.com/'
 
   # Chef
   config.vm.provision :chef_solo do |chef| 
     chef.cookbooks_path = 'cookbooks'
     
     chef.add_recipe 'front-builder.com'
+    chef.add_recipe 'front-builder.com::nginx'
   end
 end
