@@ -14,23 +14,10 @@ SSH into the virtual machine via
 
   $ vagrant ssh
 
-Change to the project directory via 
-
-  $ cd /vagrant
-
-Install project dependencies via
-
-  $ bundle install
-
-Before you run the project for the first time, you will need to
-create the database and run migrations:
-
-  $ rake db:setup
-
 You can now run the project via 
 
   $ rails s
 
-You can view the project by visiting
+Vagrant will be running at
 
-  localhost:3000
+  192.168.33.22
