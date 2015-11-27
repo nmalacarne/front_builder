@@ -37,6 +37,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe 'front-builder.com'
 
     chef.json = {
+      :nginx => {
+        :server_name => 'front-builder.dev'
+      },
       :db => {
         :root_password => 'admin'
       } 
