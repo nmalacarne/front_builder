@@ -35,6 +35,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = 'cookbooks'
     
     chef.add_recipe 'front-builder.com'
+    chef.add_recipe 'front-builder.com::nginx'
+    chef.add_recipe 'front-builder.com::postgres'
+    chef.add_recipe 'front-builder.com::vagrant'
 
     chef.json = {
       :nginx => {
