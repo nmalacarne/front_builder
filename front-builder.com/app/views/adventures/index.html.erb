@@ -9,22 +9,28 @@
 </div>
 
 <div class="row" style="padding-top: 20px;">
-  <% @adventures.each do |adventure| %>
-    <%= link_to adventure_path(adventure) do %>
-      <div class="large-4 columns">
-        <div class="panel">
-          <h3 class="text-center">
-            <%= truncate adventure.title, length: 20 %>     
-          </h3>
-          <hr>
-          <div class="text-center">
-            <b>
-              <%= pluralize adventure.dangers.count, 'danger' %>
-            </b>
+  <% if @adventures.any? -%>
+    <% @adventures.each do |adventure| %>
+      <%= link_to adventure_path(adventure) do %>
+        <div class="large-4 columns">
+          <div class="panel">
+            <h3 class="text-center">
+              <%= truncate adventure.title, length: 20 %>     
+            </h3>
+            <hr>
+            <div class="text-center">
+              <b>
+                <%= pluralize adventure.dangers.count, 'danger' %>
+              </b>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
+  <% else %>
+    <div class="text-center">
+      <p>No Adventures found.</p>
+    </div>
   <% end %>
 </div>
 
