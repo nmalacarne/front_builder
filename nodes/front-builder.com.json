@@ -1,0 +1,8 @@
+{
+  "run_list": [
+    "recipe[front-builder.com]"
+  ],
+  "automatic": {
+    "ipaddress": "107.170.49.140"
+  }
+}
